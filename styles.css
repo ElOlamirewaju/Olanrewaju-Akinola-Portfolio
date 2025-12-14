@@ -825,34 +825,75 @@ body:not(.theme-dark) .theme-icon--moon {
 
 /* Portfolio / work */
 
-.chip-row {
+.work-carousel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.work-window {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.work-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.1rem;
+  transition: transform 0.45s ease;
+  will-change: transform;
+  gap: 1rem;
 }
 
-.chip {
-  border-radius: 999px;
+.work-slide {
+  min-width: 100%;
+  flex: 0 0 100%;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   border: 1px solid var(--border-subtle);
-  padding: 0.3rem 0.8rem;
-  font-size: 0.8rem;
-  background: transparent;
-  color: var(--text-soft);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
   cursor: pointer;
-  transition: background var(--transition-fast), border-color var(--transition-fast),
-    color var(--transition-fast), transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
-.chip:hover {
-  border-color: var(--border-strong);
+.carousel-btn:hover {
   transform: translateY(-1px);
+  border-color: var(--border-strong);
+  box-shadow: 0 16px 30px rgba(99, 102, 241, 0.18);
 }
 
-.chip.is-active {
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-soft);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.carousel-dots .dot.is-active {
   background: var(--accent-soft);
   border-color: var(--border-strong);
-  color: var(--accent-strong);
+  transform: scale(1.05);
 }
 
 .work-card {
@@ -862,24 +903,20 @@ body:not(.theme-dark) .theme-icon--moon {
   overflow: hidden;
 }
 
-.work-image-wrap {
+.work-media {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: var(--bg-soft);
+  aspect-ratio: 16 / 9;
 }
 
-.work-image-wrap img {
+.work-media video {
   width: 100%;
-  height: 190px;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transform: scale(1.02);
-  transition: transform var(--transition-med), filter var(--transition-med);
-}
-
-.work-card:hover .work-image-wrap img {
-  transform: scale(1.06);
-  filter: saturate(1.1) contrast(1.05);
+  background: #000;
 }
 
 .work-body {
@@ -905,6 +942,13 @@ body:not(.theme-dark) .theme-icon--moon {
 .inline-link:hover {
   border-color: var(--accent-strong);
   color: var(--accent);
+}
+
+.work-meta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-soft);
 }
 
 /* Technical & research */
