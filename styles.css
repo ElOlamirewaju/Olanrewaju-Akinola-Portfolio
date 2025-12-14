@@ -467,6 +467,7 @@ body:not(.theme-dark) .theme-icon--moon {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 0.4rem;
+  align-items: center;
 }
 
 .hero-link {
@@ -486,6 +487,13 @@ body:not(.theme-dark) .theme-icon--moon {
   border-color: var(--border-subtle);
   color: var(--text-muted);
   transform: translateY(-1px);
+}
+
+.hero-links--card {
+  justify-content: center;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-subtle);
 }
 
 /* Hero right */
