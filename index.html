@@ -438,91 +438,91 @@
       <section id="work" class="section reveal">
         <div class="section-header">
           <h2>Selected work</h2>
-          <p>A snapshot of projects across broadcast, brands and immersive experiences.</p>
+          <p>Three flagship pieces—presented in a landscape carousel for quick viewing.</p>
         </div>
 
-        <div class="chip-row" id="workFilters">
-          <button class="chip is-active" data-filter="all">All</button>
-          <button class="chip" data-filter="creative">Creative campaigns</button>
-          <button class="chip" data-filter="broadcast">Broadcast</button>
-          <button class="chip" data-filter="client">Client work</button>
+        <div class="work-carousel">
+          <button class="carousel-btn" type="button" data-carousel-prev aria-label="Previous project">
+            ←
+          </button>
+
+          <div class="work-window">
+            <div class="work-track">
+              <article class="work-card card work-slide" data-index="0">
+                <div class="work-media">
+                  <video
+                    src="assets/Delia-Tosin.mp4"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/Delia-Tosin.jpg"
+                  ></video>
+                </div>
+                <div class="work-body">
+                  <h3>Traditional wedding · Delia & Tosin</h3>
+                  <p class="work-role">Lead Editor · Story Director</p>
+                  <p>
+                    A Congolese bride meets a Nigerian groom in a celebration of color, family and
+                    faith. Cut to honor heritage, vows and joyful dance without losing the intimacy
+                    between two cultures.
+                  </p>
+                  <span class="work-meta">File: Delia-Tosin (assets)</span>
+                </div>
+              </article>
+
+              <article class="work-card card work-slide" data-index="1">
+                <div class="work-media">
+                  <video
+                    src="assets/Koinonia-SOR.mp4"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/Koinonia-SOR.jpg"
+                  ></video>
+                </div>
+                <div class="work-body">
+                  <h3>Sound of Revival · Koinonia Global</h3>
+                  <p class="work-role">Creative Director · Editor</p>
+                  <p>
+                    A worship story built around the swell of live voices—capturing atmosphere,
+                    congregation energy and intimate ministry moments that flow like a single breath.
+                  </p>
+                  <span class="work-meta">File: Koinonia SOR (assets)</span>
+                </div>
+              </article>
+
+              <article class="work-card card work-slide" data-index="2">
+                <div class="work-media">
+                  <video
+                    src="assets/The-Gathering.mp4"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/The-Gathering.jpg"
+                  ></video>
+                </div>
+                <div class="work-body">
+                  <h3>The Gathering · Warehouse Worship</h3>
+                  <p class="work-role">Director · Post-production Lead</p>
+                  <p>
+                    A warehouse filled with voices, light and live instrumentation. Crafted to feel
+                    like an invitation—immersive pacing, wide aerials and close-up worship intimacy.
+                  </p>
+                  <span class="work-meta">File: The Gathering (assets)</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <button class="carousel-btn" type="button" data-carousel-next aria-label="Next project">
+            →
+          </button>
         </div>
 
-        <div class="grid grid--3">
-          <article class="work-card card" data-type="creative">
-            <div class="work-image-wrap">
-              <img
-                src="assets/work-rainbow.jpg"
-                alt="Visual from Rainbow Kreativ campaign"
-                loading="lazy"
-              />
-            </div>
-            <div class="work-body">
-              <h3>Rainbow Kreativ campaigns</h3>
-              <p class="work-role">Creative Director & Interactive Media Lead</p>
-              <p>
-                Multi-format campaigns combining live-action, motion graphics and worship visuals
-                for clients across the UK and Spain.
-              </p>
-              <a
-                href="https://www.instagram.com/p/C-HuJ6ioR-V/"
-                target="_blank"
-                class="inline-link"
-              >
-                View campaign snippet ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="work-card card" data-type="broadcast">
-            <div class="work-image-wrap">
-              <img
-                src="assets/work-bbc.jpg"
-                alt="Broadcast frame from BBC Northern Ireland project"
-                loading="lazy"
-              />
-            </div>
-            <div class="work-body">
-              <h3>BBC NI short-form story</h3>
-              <p class="work-role">Media Technologist / Video Editor</p>
-              <p>
-                Broadcast edit integrating motion graphics and 3D visualisations to support
-                editorial storytelling and accessibility.
-              </p>
-              <a
-                href="https://www.instagram.com/p/Cx3D6tiC-f6/"
-                target="_blank"
-                class="inline-link"
-              >
-                View edit excerpt ↗
-              </a>
-            </div>
-          </article>
-
-          <article class="work-card card" data-type="client">
-            <div class="work-image-wrap">
-              <img
-                src="assets/work-clients.jpg"
-                alt="Client visuals and brand work collage"
-                loading="lazy"
-              />
-            </div>
-            <div class="work-body">
-              <h3>Client visuals & brand work</h3>
-              <p class="work-role">Freelance Creative</p>
-              <p>
-                Brand-aligned visuals and post-production for clients including Veekee James,
-                Todd Dulaney and StepFWD Awards.
-              </p>
-              <a
-                href="https://www.rainbowkreativ.com/"
-                target="_blank"
-                class="inline-link"
-              >
-                View client work ↗
-              </a>
-            </div>
-          </article>
+        <div class="carousel-dots" aria-label="Project navigation dots">
+          <button type="button" class="dot is-active" data-carousel-dot="0" aria-label="Slide 1"></button>
+          <button type="button" class="dot" data-carousel-dot="1" aria-label="Slide 2"></button>
+          <button type="button" class="dot" data-carousel-dot="2" aria-label="Slide 3"></button>
         </div>
       </section>
 
