@@ -12,8 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const navAnchors = navLinks ? navLinks.querySelectorAll("a[href^='#']") : [];
   const rolePills = document.querySelectorAll(".role-pill");
   const rolePanels = document.querySelectorAll(".role-panel");
-  const workFilters = document.getElementById("workFilters");
-  const workCards = document.querySelectorAll(".work-card");
+  const workCarousel = document.querySelector(".work-carousel");
+  const workTrack = document.querySelector(".work-track");
+  const workSlides = document.querySelectorAll(".work-slide");
+  const workPrev = document.querySelector("[data-carousel-prev]");
+  const workNext = document.querySelector("[data-carousel-next]");
+  const workDots = document.querySelectorAll("[data-carousel-dot]");
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
 
@@ -190,31 +194,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* Work filters */
-  if (workFilters && workCards.length) {
-    const filterButtons = workFilters.querySelectorAll(".chip");
+  /* Work carousel */
+  if (workCarousel && workTrack && workSlides.length) {
+    let currentSlide = 0;
 
-    const applyFilter = (filter) => {
-      filterButtons.forEach((btn) => {
-        btn.classList.toggle("is-active", btn.dataset.filter === filter);
+    const updateCarousel = (index) => {
+      currentSlide = (index + workSlides.length) % workSlides.length;
+      const offset = currentSlide * 100;
+      workTrack.style.transform = `translateX(-${offset}%)`;
+
+      workSlides.forEach((slide, i) => {
+        slide.classList.toggle("is-active", i === currentSlide);
       });
 
-      workCards.forEach((card) => {
-        const type = card.dataset.type || "all";
-        const show = filter === "all" || filter === type;
-        card.style.display = show ? "flex" : "none";
+      workDots.forEach((dot) => {
+        const dotIndex = Number(dot.dataset.carouselDot);
+        dot.classList.toggle("is-active", dotIndex === currentSlide);
       });
     };
 
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const filter = btn.dataset.filter || "all";
-        applyFilter(filter);
+    if (workPrev) {
+      workPrev.addEventListener("click", () => updateCarousel(currentSlide - 1));
+    }
+    if (workNext) {
+      workNext.addEventListener("click", () => updateCarousel(currentSlide + 1));
+    }
+    workDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const idx = Number(dot.dataset.carouselDot);
+        if (Number.isFinite(idx)) updateCarousel(idx);
       });
     });
 
-    // Default
-    applyFilter("all");
+    updateCarousel(0);
   }
 
   /* Contact form (front-end only) */
