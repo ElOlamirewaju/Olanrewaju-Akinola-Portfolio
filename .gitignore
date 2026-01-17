@@ -1,0 +1,14 @@
+# Large video files (exceed GitHub 100MB limit)
+assets/*.mp4
+assets/*.MP4
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude settings
+.claude/
