@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const workDots = document.querySelectorAll("[data-carousel-dot]");
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
+  const floatingCta = document.getElementById("floatingCta");
 
   /* Year */
   if (yearSpan) {
@@ -236,6 +237,15 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTopBtn.classList.add("visible");
       } else {
         scrollTopBtn.classList.remove("visible");
+      }
+    }
+
+    // Floating CTA visibility
+    if (floatingCta) {
+      if (scrollY > 600) {
+        floatingCta.classList.add("visible");
+      } else {
+        floatingCta.classList.remove("visible");
       }
     }
 
