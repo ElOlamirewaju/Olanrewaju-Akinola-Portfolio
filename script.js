@@ -163,20 +163,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const storedTheme = window.localStorage.getItem(THEME_KEY);
-  if (storedTheme) {
-    applyTheme(storedTheme);
-  } else {
-    // Prefer system dark if available
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-    applyTheme(prefersDark ? "dark" : "light");
-  }
+  // Always use dark mode
+  applyTheme("dark");
+  window.localStorage.setItem(THEME_KEY, "dark");
 
+  // Hide the theme toggle button since we're always in dark mode
   if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const isDark = body.classList.toggle("theme-dark");
-      window.localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
-    });
+    themeToggle.style.display = "none";
   }
 
   /* Mobile nav */
