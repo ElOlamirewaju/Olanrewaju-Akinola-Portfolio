@@ -44,5 +44,5 @@ Simply open `index.html` in a browser. No build step required.
 ## Contact
 
 - **Email:** akinola.oluwaseyi22@gmail.com
-- **LinkedIn:** [linkedin.com/in/olanrewajuakinola](https://linkedin.com/in/olanrewajuakinola)
+- **LinkedIn:** [linkedin.com/in/olanrewaju-akinola-81947697](https://www.linkedin.com/in/olanrewaju-akinola-81947697/)
 - **GitHub:** [github.com/ElOlamirewaju](https://github.com/ElOlamirewaju)
